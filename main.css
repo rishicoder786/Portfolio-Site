@@ -1,0 +1,122 @@
+/* ================================
+   Global Styles & Visual Enhancements
+   ================================ */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #222;
+}
+
+button {
+  background: linear-gradient(135deg, #4a90e2, #357ab8);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(135deg, #357ab8, #2a5d91);
+  transform: translateY(-2px);
+}
+
+/* Card styling */
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ================================
+   Interactive UI/UX Features
+   ================================ */
+/* Tooltip */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+.modal.show {
+  display: flex;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}

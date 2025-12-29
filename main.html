@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Demo</title>
+  <link rel="stylesheet" href="main.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <h1>My Portfolio</h1>
+      <div>
+        <button onclick="openModal()">Contact</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio-grid">
+    <div class="project-card tooltip" data-tip="Project One: Responsive Design">
+      <h2>Project One</h2>
+      <p>This project demonstrates responsive layouts.</p>
+    </div>
+
+    <div class="project-card tooltip" data-tip="Project Two: Hover Effects">
+      <h2>Project Two</h2>
+      <p>Hover over this card to see the effect.</p>
+    </div>
+
+    <div class="project-card tooltip" data-tip="Project Three: Modal Demo">
+      <h2>Project Three</h2>
+      <p>Click the Contact button to open a modal.</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h2>Contact Me</h2>
+      <p>Send me a message at <strong>email@example.com</strong></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript for modal -->
+  <script>
+    function openModal() {
+      document.getElementById('contactModal').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
